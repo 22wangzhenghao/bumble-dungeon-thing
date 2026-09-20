@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bumbles' Dungeon Break</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><div><strong>BUMBLES'</strong><span>DUNGEON BREAK</span></div></div>
+      <div class="run-meta"><span class="eyebrow">WAITING ROOM RUN</span><span id="runTime">00:00</span><span id="moneyValue" class="money">◆ 0</span></div>
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">♫</button>
+    </header>
+
+    <section class="game-layout">
+      <aside class="side-panel left-panel">
+        <div class="panel-title"><span>THE RUN</span><span class="live-dot"></span></div>
+        <div class="floor-card"><span class="eyebrow">CURRENT FLOOR</span><strong id="floorValue">01</strong><span id="floorFlavor">The waiting room</span></div>
+        <div class="stat-row"><span>ROOMS CLEARED</span><strong id="roomsValue">0</strong></div>
+        <div class="stat-row"><span>BEST FLOOR</span><strong id="bestValue">01</strong></div>
+        <div class="tip"><span class="tip-icon">⌁</span><p><b>Quick tip</b><br>Break line of sight behind a wall while your spell cools down.</p></div>
+        <div class="controls-note"><span class="eyebrow">CONTROLS</span><div><kbd>WASD</kbd> / <kbd>ARROWS</kbd> move</div><div><kbd>SPACE</kbd> cast spell</div><div><kbd>SHIFT</kbd> block</div></div>
+      </aside>
+
+      <section class="play-area">
+        <div class="game-frame">
+          <div class="hud-top"><div class="health-wrap"><span class="eyebrow">BUMBLE'S HP</span><div class="bar"><i id="healthBar"></i></div><b id="healthText">100 / 100</b></div><div id="objective" class="objective">FIND THE BOSS</div></div>
+          <div class="canvas-viewport"><canvas id="game" width="800" height="560" aria-label="Dungeon game"></canvas></div>
+          <div class="spell-bar">
+            <div class="spell-slots" id="spellSlots"></div>
+            <div class="boss-readout" id="bossReadout"><span class="eyebrow">BOSS HP</span><div class="bar"><i id="bossBar"></i></div></div>
+          </div>
+          <div class="mobile-controls"><button data-key="ArrowLeft">◀</button><div><button data-key="ArrowUp">▲</button><button data-key="ArrowDown">▼</button></div><button data-key="ArrowRight">▶</button><button id="mobileCast">✦</button></div>
+        </div>
+        <div class="status-line"><span id="message">Bumbles is ready. Find a way through.</span><span id="enemyCount">0 enemies</span></div>
+      </section>
+
+      <aside class="side-panel right-panel">
+        <div class="panel-title"><span>LOADOUT</span><span class="eyebrow">CHOOSE A SPELL</span></div>
+        <div id="spellList" class="spell-list"></div>
+        <div class="howto"><span class="eyebrow">HOW TO PLAY</span><p>Explore each room, bonk the little monsters, then face the boss at the gold door.</p><p>Shoot gold spike traps to disarm them before walking over them.</p><p>Every floor gets a little meaner. Every spell gets a little cooler.</p></div>
+        <div class="shop"><div class="panel-title"><span>TRAVEL SHOP</span><span class="eyebrow">SPEND ◆</span></div><button data-buy="power">Spell power <b>◆ 12</b></button><button data-buy="hp">Max HP +20 <b>◆ 18</b></button><button data-buy="size">Bigger dungeon <b>◆ 25</b></button><button data-buy="theme">Change map theme <b>◆ 10</b></button></div>
+      </aside>
+    </section>
+    <footer><span>MADE FOR BORING MOMENTS</span><span>NO ADS · NO LOGIN · JUST DUNGEON</span></footer>
+  </main>
+  <div id="overlay" class="overlay hidden"><div class="modal"><span class="brand-mark">✦</span><h1 id="modalTitle">RUN OVER</h1><p id="modalText"></p><button id="modalBtn" class="primary-btn">TRY AGAIN</button></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
