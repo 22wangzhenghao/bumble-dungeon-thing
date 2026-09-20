@@ -31,12 +31,11 @@
       <section class="play-area">
         <div class="game-frame">
           <div class="hud-top"><div class="health-wrap"><span class="eyebrow" id="nameHpLabel">PLAYER HP</span><div class="bar"><i id="healthBar"></i></div><b id="healthText">100 / 100</b></div><div id="objective" class="objective">FIND THE BOSS</div></div>
-          <div class="canvas-viewport"><canvas id="game" width="800" height="560" aria-label="Dungeon game"></canvas></div>
+          <div class="canvas-viewport"><canvas id="game" width="800" height="560" aria-label="Dungeon game"></canvas><div class="mobile-controls"><button data-key="ArrowLeft">◀</button><div><button data-key="ArrowUp">▲</button><button data-key="ArrowDown">▼</button></div><button data-key="ArrowRight">▶</button><button id="mobileCast">✦</button></div></div>
           <div class="spell-bar">
             <div class="spell-slots" id="spellSlots"></div>
             <div class="boss-readout" id="bossReadout"><span class="eyebrow">BOSS HP</span><div class="bar"><i id="bossBar"></i></div></div>
           </div>
-          <div class="mobile-controls"><button data-key="ArrowLeft">◀</button><div><button data-key="ArrowUp">▲</button><button data-key="ArrowDown">▼</button></div><button data-key="ArrowRight">▶</button><button id="mobileCast">✦</button></div>
         </div>
         <div class="status-line"><span id="message">Player is ready. Find a way through.</span><span id="enemyCount">0 enemies</span></div>
       </section>
